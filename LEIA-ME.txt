@@ -1,0 +1,40 @@
+PROJETO: Inglês para Trabalhar nos EUA — V3 (incremental)
+
+Aproveita os arquivos da versão V2 e mantém HTML/CSS/JS + Google Apps Script + Sheets.
+O catálogo foi ampliado com frases adicionais por subsetor e um glossário profissional.
+Foi acrescentado o modo Professor IA: conversa por texto, microfone usando reconhecimento nativo do browser, resposta por IA, e botão de áudio natural TTS via OpenAI API (quando configurada).
+
+CONFIGURAÇÃO DO PROFESSOR IA E VOZ NATURAL:
+1. Abra Code.gs em Apps Script e configure SHEET_ID com o ID da planilha.
+2. Em Apps Script > Project Settings > Script Properties, crie OPENAI_API_KEY com sua chave secreta.
+3. Implante como Web App: executar como você; acesso conforme seu uso (proteger o endpoint).
+4. Copie URL /exec e cole no programa em Configurações.
+5. A função chat usa gpt-4o-mini; fala natural usa gpt-4o-mini-tts. São serviços online com cobrança conforme preços atuais da API. A chave fica nas Script Properties, não no navegador.
+Nota: restringir acesso ao Web App e não compartilhar a URL sem proteção; Apps Script Web App público pode permitir abuso/custos. Recomendado adicionar autenticação/token antes de uso público.
+
+EXECUÇÃO:
+- Descompacte ZIP e abra pasta no VS Code.
+- Live Server em localhost/HTTPS; PWA requer HTTPS ou localhost.
+- Modo professor online precisa de internet e Apps Script implantado.
+- O microfone via SpeechRecognition pode ser serviço do navegador, não garantido offline.
+- A voz natural API gera fala online; voz local do browser fica como fallback.
+- Pronunciation score permanece correspondência de transcrição, não avaliação fonética.
+- PDF upload atual continua sendo preparação/placeholder; não há extração automática integrada na V3.
+- Áudios não estão todos pré-baixados para modo offline; PWA cacheia recursos de interface.
+
+
+DEPLOY VERCEL — USAR NO CELULAR:
+Este pacote está preparado como site estático/PWA para hospedagem na Vercel.
+
+FORMA mais simples:
+1. Crie uma conta em https://vercel.com (pode usar login GitHub).
+2. No GitHub, crie um repositório e envie todos os arquivos desta pasta, incluindo vercel.json e icons.
+3. Na Vercel, toque em Add New > Project e importe o repositório.
+4. Framework Preset: Other. Build Command: deixe vazio (ou Override desligado). Output Directory: . (raiz).
+5. Clique Deploy. A Vercel fornecerá um endereço HTTPS *.vercel.app.
+6. Abra esse endereço no celular Android (Chrome).
+7. Menu do Chrome > Instalar app (ou Adicionar à tela inicial). O app ficará com ícone e abertura em tela própria.
+
+Para atualizar: envie as alterações ao GitHub; Vercel redeploya automaticamente.
+Não abra index.html como arquivo local; use o domínio HTTPS publicado para PWA e microfone.
+O site na Vercel hospeda a interface/catalogo. Professor IA e voz online ainda precisam da URL do Apps Script configurada em Configurações e da chave API guardada no Apps Script. Vercel não recebe nem precisa da chave nesta versão.

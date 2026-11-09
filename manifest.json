@@ -1,0 +1,26 @@
+{
+  "name": "Inglês para Trabalhar nos EUA",
+  "short_name": "Inglês EUA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f1e5",
+  "theme_color": "#173c2b",
+  "description": "Estudo de inglês profissional para trabalhadores nos Estados Unidos",
+  "lang": "pt-BR",
+  "scope": "/",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
